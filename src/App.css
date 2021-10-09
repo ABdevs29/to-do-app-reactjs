@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+.card {
+  display: grid;
+  grid-template-columns: 0.5fr 4fr 1fr 2fr;
+  gap: 0.5rem;
+  border: 1px solid darkblue;
+  background-color: rgb(228, 250, 228);
+  margin: 2rem;
+  transition: all 200ms;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.container-body {
+  margin-top: 1rem;
+}
+.add-task-btn {
+  margin: 1rem;
+  padding: 1rem;
+}
+.input-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 1028px) {
+  .input-box {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .card {
+    grid-template-columns: 0.5fr 4fr 1fr 1fr;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 790px) {
+  .input-box {
+    grid-template-columns: 1fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
+  .card {
+    grid-template-columns: 0.5fr 4fr;
+  }
+}
+@media screen and (max-width: 540px) {
+  .input-box {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    grid-template-columns: 0.5fr 4fr;
+  }
+}
+@media screen and (max-width: 460px) {
+  .card {
+    grid-template-columns: 1fr;
   }
 }
